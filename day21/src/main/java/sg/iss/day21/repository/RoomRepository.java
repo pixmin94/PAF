@@ -28,13 +28,15 @@ public class RoomRepository {
 
     public int count() {
         Integer result = 0;
+
         result = jdbcTemplate.queryForObject(countSQL, Integer.class);
+
         return result;
     }
 
     public List<Room> getAllRooms() {
         List<Room> roomList = new ArrayList<>();
-        roomList = jdbcTemplate.query(findAllSQL, BeanPropertyRowMapper.newInstance(Room.class);
+        roomList = jdbcTemplate.query(findAllSQL, BeanPropertyRowMapper.newInstance(Room.class));
         return roomList;
     }
 
